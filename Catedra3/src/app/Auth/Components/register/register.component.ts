@@ -54,7 +54,7 @@ export class RegisterComponent {
       const response = await this.authService.register(formValue);
       if (response.token) {
         this.localStorage.setVariable('token', response.token);
-        this.router.navigate(['/Post']);
+        this.router.navigate(['login']);
       } else {
         this.errorMessage = 'Registro fallido.';
         this.registrationAlert = true;

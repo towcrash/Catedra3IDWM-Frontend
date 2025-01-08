@@ -10,7 +10,6 @@ import { LocalStorageService } from '../../../Auth/Services/local-storage.servic
 export class PostCardComponent {
   @Input() post: any;
   
-  private LSservice = inject(LocalStorageService);
 
   constructor() {
     this.post = {
