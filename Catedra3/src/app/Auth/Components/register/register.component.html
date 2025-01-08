@@ -1,0 +1,22 @@
+<form (ngSubmit)="register()" [formGroup]="form" class="space-y-6">
+    <div>
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo electrónico</label>
+      <input type="email" formControlName="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Correo electrónico" required>
+      <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="text-red-500 text-sm">
+        Por favor, ingrese una dirección de correo electrónico válida.
+      </div>
+    </div>
+    <div>
+      <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Contraseña</label>
+      <input type="password" formControlName="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Contraseña" required>
+      <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="text-red-500 text-sm">
+        La contraseña debe tener entre 8 y 20 caracteres.
+      </div>
+    </div>
+    <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Registrarse</button>
+  </form>
+  <div *ngIf="registrationAlert" class="mt-4 p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg" role="alert">
+    {{ errorMessage }}
+    <button (click)="closeAlert()" class="ml-2 text-red-700 hover:underline">Cerrar</button>
+  </div>
+  

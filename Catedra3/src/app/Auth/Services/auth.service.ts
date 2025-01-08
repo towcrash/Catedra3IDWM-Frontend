@@ -10,7 +10,7 @@ import { firstValueFrom } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:5042/api/Auth/';
+  private apiUrl = 'http://localhost:5144/api/Auth/';
     public errors: string [] = [];
     private http = inject(HttpClient);
     private router = inject(Router);
@@ -44,12 +44,8 @@ export class AuthService {
      */
     async register(form: any): Promise<ResponseAPIUser> {
       try {
-        form.enabled = true;
-        const [day, month, year] = form.birthdate.split('-').map((val: string) => parseInt(val, 10));
-        form.birthdate = `${day.toString().padStart(2, '0')}-${month.toString().padStart(2, '0')}-${year}`; // Asegúrate de que la fecha de nacimiento esté en formato dd-mm-yyyy
-
         const response = await firstValueFrom(this.http.post<ResponseAPIUser>(this.apiUrl + 'register', form));
-        this.localStorageService.setVariable('token', response.token);// Guarda el rol
+        this.localStorageService.setVariable('token', response.token);
         return Promise.resolve(response);
       } catch (error) {
         console.log('Error en el servicio de registro', error);
