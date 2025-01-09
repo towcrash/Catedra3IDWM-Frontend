@@ -30,4 +30,28 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  toViewPosts() 
+  {
+    if (this.isLogged) {
+      this.router.navigate(['view_posts']);
+    }
+    else
+    {
+      alert('You need to be logged in to access');
+      this.router.navigate(['login']);
+    }
+  }
+
+  
+  toPost() 
+  {
+    if (this.isLogged) {
+      this.router.navigate(['post']);
+    }
+    else
+    {
+      alert('You need to be logged in to access');
+      this.router.navigate(['login']);
+    }
+  }
 }

@@ -6,10 +6,10 @@
     <a href="/register" class="flex items-center space-x-3 rtl:space-x-reverse">
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white">Register</span>
     </a>
-    <a href="/view_posts" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a (click)="toViewPosts()" class="flex items-center space-x-3 rtl:space-x-reverse">
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white">View</span>
     </a>
-    <a href="/posts" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a (click)="toPost()" class="flex items-center space-x-3 rtl:space-x-reverse">
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-white">Posts</span>
     </a>
     <a (click)="logout()" class="flex items-center space-x-3 rtl:space-x-reverse">

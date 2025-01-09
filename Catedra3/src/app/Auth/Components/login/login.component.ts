@@ -4,7 +4,7 @@ import { AuthService } from '../../Services/auth.service';
 import { LocalStorageService } from '../../Services/local-storage.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AlertComponent } from '../alert/alert.component';
+import { AlertComponent } from '../../../_Shared/alert/alert.component';
 
 @Component({
   selector: 'app-login',

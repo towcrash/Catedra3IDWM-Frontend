@@ -19,6 +19,12 @@ export const routes: Routes = [
         canActivate:[AuthGuard]
     },
     {
+        path: 'post',
+        loadComponent: () => import('../app/Post/Pages/post-form-page/post-form-page.component').then(m => m.PostFormPageComponent),
+        pathMatch: 'full',
+        canActivate:[AuthGuard]
+    },
+    {
         path: '**',
         redirectTo: 'login',
     }
