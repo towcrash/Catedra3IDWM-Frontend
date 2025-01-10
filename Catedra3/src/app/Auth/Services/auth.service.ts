@@ -25,6 +25,7 @@ export class AuthService {
       try {
         const response = await firstValueFrom(this.http.post<ResponseAPIUser>(this.apiUrl + 'login', form));
         this.localStorageService.setVariable('token', response.token);
+        this.localStorageService.setVariable('id', response.id);
         this.router.navigate(['/home']); 
         return Promise.resolve(response);
       } catch (error) {
@@ -46,6 +47,7 @@ export class AuthService {
       try {
         const response = await firstValueFrom(this.http.post<ResponseAPIUser>(this.apiUrl + 'register', form));
         this.localStorageService.setVariable('token', response.token);
+        this.localStorageService.setVariable('id', response.id);
         return Promise.resolve(response);
       } catch (error) {
         console.log('Error en el servicio de registro', error);

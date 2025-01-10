@@ -70,6 +70,7 @@ export class LoginComponent {
 
       if (response.token) {
         this.localStorage.setVariable('token', response.token);
+        this.localStorage.setVariable('id', response.id);
         this.router.navigate(['view_posts'])
       } else {
         this.errorMessage = 'Contraseña inválida.';

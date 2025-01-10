@@ -29,7 +29,7 @@ export class PostsListComponent {
 
 
   /**
-   * Inicializa el componente obteniendo los productos.
+   * Inicializa el componente obteniendo los posts.
    */
   ngOnInit(): void 
   {
@@ -39,7 +39,7 @@ export class PostsListComponent {
   constructor(private router: Router) {}
 
   /**
-   * Obtiene todos los productos del servicio y los almacena en el array de productos.
+   * Obtiene todos los productos del servicio y los almacena en el array de posts.
    */
   ObtenerPosts() 
   {

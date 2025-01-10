@@ -48,15 +48,16 @@ export class PostFormComponent {
   }
 
   /**
-   * Envía el formulario para crear un nuevo producto.
+   * Envía el formulario para crear un nuevo post.
    */
   async submit() {
     if (this.postForm.invalid || !this.selectedFile) return;
 
     try {
       const formData = new FormData();
-      formData.append('title', this.postForm.value.title);
-      formData.append('image', this.selectedFile); // Add the file
+      formData.append('Title', this.postForm.value.title);
+      formData.append('Image', this.selectedFile); 
+      formData.append('AppUserId', this.localStorageService.getVariable('id'))
       
 
       const response = await this.postService.CreatePost(formData);
